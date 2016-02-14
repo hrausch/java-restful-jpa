@@ -20,7 +20,6 @@ public class ClienteService {
 			return new ArrayList<Cliente>();
 
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return new ArrayList<Cliente>();
 		}
@@ -34,7 +33,6 @@ public class ClienteService {
 		} catch (SQLException e) {
 			return null;
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return null;
 		}
@@ -46,7 +44,6 @@ public class ClienteService {
 		} catch (SQLException e) {
 			return null;
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return null;
 		}
@@ -59,7 +56,6 @@ public class ClienteService {
 		} catch (SQLException e) {
 			return false;
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return false;
 		}
@@ -73,7 +69,6 @@ public class ClienteService {
 		} catch (SQLException e) {
 			return false;
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return false;
 		}

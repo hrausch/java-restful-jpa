@@ -35,12 +35,12 @@ public class ClientesResource {
 		return c;
 	}
 
-	@GET
-	@Path("/nome/{nome}")
-	public List<Cliente> getByNome(@PathParam("nome") String nome) {
-		List<Cliente> carros = clienteService.findByName(nome);
-		return carros;
-	}
+//	@GET
+//	@Path("/nome/{nome}")
+//	public List<Cliente> getByNome(@PathParam("nome") String nome) {
+//		List<Cliente> carros = clienteService.findByName(nome);
+//		return carros;
+//	}
 	
 	@DELETE
 	@Path("{id}")

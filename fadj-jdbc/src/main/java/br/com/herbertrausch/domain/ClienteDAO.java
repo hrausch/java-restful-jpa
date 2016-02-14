@@ -144,12 +144,8 @@ public class ClienteDAO {
 	public void save(Cliente c) throws SQLException, ClassNotFoundException {
 		Connection conn = null;
 		PreparedStatement stmt = null;
-
 		try {
-
 			conn = ConnectionSingleton.getInstance().getConnection();
-
-
 			if (c.getId() == null) {
 				stmt = conn
 						.prepareStatement(
@@ -160,7 +156,6 @@ public class ClienteDAO {
 						.prepareStatement("update cliente set nome=?,sobrenome=?,email=? where id=?");
 			}
 
-			
 			stmt.setString(1, c.getNome()); //substitue o primeiro '?' pelo valor de c.getNome
 			stmt.setString(2, c.getSobrenome()); //substitue o segundo '?' pelo valor de c.getSobrenome
 			stmt.setString(3, c.getEmail()); //substitue o terceiro '?' pelo valor de c.getEmail

@@ -36,12 +36,12 @@ public class EnderecoResource {
 		return e;
 	}
 
-	@GET
-	@Path("/cliente/{id}")
-	public List<Endereco> getByClienteId(@PathParam("id") long id) {
-		List<Endereco> lista = service.getEnderecosByCliente(id);
-		return lista;
-	}
+//	@GET
+//	@Path("/cliente/{id}")
+//	public List<Endereco> getByClienteId(@PathParam("id") long id) {
+//		List<Endereco> lista = service.getEnderecosByCliente(id);
+//		return lista;
+//	}
 	
 	@DELETE
 	@Path("{id}")

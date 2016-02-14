@@ -19,7 +19,6 @@ public class EnderecoService {
 			return new ArrayList<Endereco>();
 
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return new ArrayList<Endereco>();
 		}
@@ -33,7 +32,6 @@ public class EnderecoService {
 		} catch (SQLException e) {
 			return null;
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return null;
 		}
