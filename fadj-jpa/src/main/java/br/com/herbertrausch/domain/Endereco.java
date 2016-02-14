@@ -7,7 +7,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
 public class Endereco implements Serializable {
@@ -18,7 +17,8 @@ public class Endereco implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	private String pais;
+	@ManyToOne
+	private Pais pais;
 	private String uf;
 	private String cidade;
 	private String endereco;
@@ -42,11 +42,11 @@ public class Endereco implements Serializable {
 		this.cliente = cliente;
 	}
 
-	public String getPais() {
+	public Pais getPais() {
 		return pais;
 	}
 
-	public void setPais(String pais) {
+	public void setPais(Pais pais) {
 		this.pais = pais;
 	}
 
