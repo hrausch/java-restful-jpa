@@ -1,18 +1,27 @@
 package fadjjdbc;
 
+import java.util.List;
+
 import br.com.herbertrausch.domain.Endereco;
 import br.com.herbertrausch.domain.EnderecoService;
+import br.com.herbertrausch.domain.Produto;
+import br.com.herbertrausch.domain.ProdutoAtributo;
+import br.com.herbertrausch.domain.ProdutoService;
 
 public class PersistenceTest {
 	
 	public static void main(String [] args){
 		
-		Endereco e;
-		EnderecoService es = new EnderecoService();
-
-		e = es.getEndereco((long) 1);
+		Produto p = new Produto();
+		ProdutoService db = new ProdutoService();
 		
-		System.out.println(e.toString());
+		List<Produto> ps = db.getProdutos();
+		
+		p = ps.get(0);
+		
+		List<Object[]> pa = db.getSomaMediaValor();
+		
+		System.out.println("");
 	}
 
 }

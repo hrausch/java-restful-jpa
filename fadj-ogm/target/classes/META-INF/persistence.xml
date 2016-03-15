@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1"
+	xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="fadjjdbc2" transaction-type="RESOURCE_LOCAL" >
+
+		<provider>org.hibernate.ogm.jpa.HibernateOgmPersistence</provider>
+
+		<properties>
+			 <property name="hibernate.ogm.datastore.provider"
+                      value="org.hibernate.ogm.datastore.infinispan.impl.InfinispanDatastoreProvider"/>
+			<property name="hibernate.ogm.datastore.database" value="professorhub" />
+			<property name="hibernate.ogm.datastore.host" value="ds061777.mlab.com" />
+			<property name="hibernate.ogm.datastore.port" value="61777" />
+			<property name="hibernate.ogm.datastore.username" value="professorhub-dev" />
+			<property name="hibernate.ogm.datastore.password" value="p3t3c4d0" />
+			
+			
+		
+		</properties>
+
+	</persistence-unit>
+</persistence>

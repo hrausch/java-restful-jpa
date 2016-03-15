@@ -38,6 +38,10 @@ public class ClienteService {
 	public List<Cliente> getByNome(String a){
 		return db.findByNome(a);
 	}
+	
+	public Cliente getByNome2(String a){
+		return db.findClientePeloNome(a);
+	}
 
 	public Cliente getCliente(Long id) {
 		try {
