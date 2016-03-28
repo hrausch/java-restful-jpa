@@ -1,6 +1,8 @@
 package br.com.herbertrausch.spring.mongo;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.geo.Point;
+import org.springframework.data.mongodb.core.index.GeoSpatialIndexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "endereco")
@@ -8,10 +10,15 @@ public class Endereco {
 
 	@Id
 	private String id;
+	
+	@GeoSpatialIndexed
+	 private double[] localizacao;
+	
 	private String rua;
 	private String estado;
 	private String cidade;
 	
+
 	
 	public String getId() {
 		return id;
@@ -37,5 +44,14 @@ public class Endereco {
 	public void setCidade(String cidade) {
 		this.cidade = cidade;
 	}
+	public double[] getLocalizacao() {
+		return localizacao;
+	}
+	public void setLocalizacao(double[] localizacao) {
+		this.localizacao = localizacao;
+	}
+
+	
+	
 
 }

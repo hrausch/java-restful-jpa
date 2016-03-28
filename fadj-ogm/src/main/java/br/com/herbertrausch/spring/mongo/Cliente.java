@@ -4,12 +4,14 @@ import java.util.List;
 
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.util.Assert;
 
 @Document
 public class Cliente {
 	
 	private String nome;
 	private String email;
+	
 	
 	@DBRef
 	private List<Endereco> enderecos;

@@ -20,6 +20,21 @@ public class ProdutoService {
 		db.save(e);
 	}
 	
+	public List<Produto> getAll(float valor){
+		
+		return db.findByValorLessThan(valor);
+	}
+	
+	public List<Produto> getAll(int from, int to){
+		
+		return db.findByValorBetween(from, to);
+	}
+	
+	
+	public void deleteByAtributo(String nomeAtributo){
+		db.deleteByAtributosAtributo(nomeAtributo);
+	}
+	
 	public List<Produto> getAll(){
 		
 		return db.findAll();

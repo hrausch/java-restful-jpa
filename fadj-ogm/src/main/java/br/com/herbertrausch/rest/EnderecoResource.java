@@ -11,6 +11,8 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+import org.springframework.data.geo.GeoResults;
+
 import br.com.herbertrausch.spring.mongo.Endereco;
 import br.com.herbertrausch.spring.mongo.EnderecoService;
 
@@ -26,6 +28,18 @@ public class EnderecoResource {
 		
 		return es.getAll();
 		
+	}
+	
+	@GET
+	@Path("/geowithin")
+	public List<Endereco> getByLocal2() {
+		return es.getByLocationWithin();
+	}
+	
+	@GET
+	@Path("/geo/{latitude}/{longitude}/{distancia}")
+	public GeoResults<Endereco> getByLocal(@PathParam("latitude") double latitude, @PathParam("longitude") double longitude, @PathParam("distancia") double distancia ) {
+		return es.getByLocation(latitude, longitude,  distancia);
 	}
 	
 	@GET
