@@ -45,9 +45,9 @@ public class RestFulClient {
     
 
 
-    public void recuperarEnderecos(){
+    public String recuperarEnderecos(){
     	
-
+    		String output = "";
     		try {
     			// instancia um cliente http
     	        httpClient = new DefaultHttpClient();
@@ -74,12 +74,13 @@ public class RestFulClient {
 				BufferedReader br = new BufferedReader(
 		                        new InputStreamReader((response.getEntity().getContent())));
 
-				String output;
+				String aux;
 				System.out.println("Output from Server .... \n");
 				
-				while ((output = br.readLine()) != null) {
-					System.out.println(output);
+				while ((aux = br.readLine()) != null) {
+					output += aux;
 				}
+				
 
 				
 				
@@ -92,6 +93,8 @@ public class RestFulClient {
 			}catch (URISyntaxException e) {
 	            e.printStackTrace();
 	        }
+    		
+    		return output;
 
 
     }

@@ -1,5 +1,7 @@
 package br.com.herbertrausch;
 
+import java.util.ArrayList;
+
 import br.com.herbertrausch.domain.Endereco;
 import br.com.herbertrausch.rest.RestFulClient;
 
@@ -11,14 +13,24 @@ public class Principal {
 		
 		
 		//Recuperando todos os enderecos
-		ws.recuperarEnderecos();
+		String json = ws.recuperarEnderecos();
+		System.out.println(json);
 		
+		//transformando em objetos
+		
+		ArrayList<Endereco> e1 = Endereco.fromArrayJson(json);
+		
+		for(Endereco e: e1){
+			System.out.println(e.getRua());
+		
+			System.out.println(e.getEstado());
+		}
 		//Salvando endereco
 		
-		Endereco e1 = new Endereco();
-		
-		e1.setCidade("Varginha");
-		e1.setRua("Imigrante Cliente2");
+
+//		
+//		e1.setCidade("Varginha");
+//		e1.setRua("Imigrante Cliente2");
 		
 //		ws.salvarEndereco(e1);
 		
