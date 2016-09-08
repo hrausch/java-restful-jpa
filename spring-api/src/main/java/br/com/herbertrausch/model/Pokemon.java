@@ -26,5 +26,9 @@ public class Pokemon {
 		this.nome = nome;
 	}
 	
+	public String toString(){
+		return "Id: " + this.id + " **  Nome: " + this.nome +"  ** ";
+	}
+	
 	
 }

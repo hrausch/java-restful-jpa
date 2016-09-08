@@ -63,9 +63,10 @@ public class EnderecoResource {
 	}
 	
 	@POST
-	public void save(Endereco e){
+	public Endereco save(Endereco e){
 		
 		es.insert(e);
+		return e;
 		
 	}
 
